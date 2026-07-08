@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Sana Özel 💌</title>
+
+<style>
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    height:100vh;
+    background:linear-gradient(#090014,#1b002b);
+    color:white;
+    font-family:Arial,sans-serif;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+}
+
+.kutu{
+    text-align:center;
+    padding:30px;
+}
+
+h1{
+    font-size:38px;
+}
+
+p{
+    font-size:20px;
+}
+
+button{
+    background:#ff4d88;
+    color:white;
+    border:none;
+    padding:15px 40px;
+    border-radius:30px;
+    font-size:20px;
+    cursor:pointer;
+}
+
+#ikinci{
+    display:none;
+}
+
+.kalp{
+    position:absolute;
+    bottom:-50px;
+    animation:yukari 5s linear infinite;
+}
+
+@keyframes yukari{
+    from{
+        transform:translateY(0);
+        opacity:1;
+    }
+    to{
+        transform:translateY(-110vh);
+        opacity:0;
+    }
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="kutu">
+
+<div id="birinci">
+<h1>💌 Sana özel</h1>
+<p>Hazırsan başlayalım...</p>
+<button onclick="baslat()">Başla</button>
+</div>
+
+
+<div id="ikinci">
+<h1>❤️</h1>
+<p>
+Senin için küçük bir sürpriz hazırladım.
+<br><br>
+Umarım yüzünde bir gülümseme bırakır.
+</p>
+</div>
+
+</div>
+
+
+<script>
+
+function baslat(){
+
+document.getElementById("birinci").style.display="none";
+document.getElementById("ikinci").style.display="block";
+
+
+for(let i=0;i<30;i++){
+
+let kalp=document.createElement("div");
+
+kalp.innerHTML="❤️";
+kalp.className="kalp";
+
+kalp.style.left=Math.random()*100+"%";
+kalp.style.fontSize=(15+Math.random()*25)+"px";
+kalp.style.animationDuration=(3+Math.random()*4)+"s";
+
+document.body.appendChild(kalp);
+
+}
+
+}
+
+</script>
+
+</body>
+</html>
